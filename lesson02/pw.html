@@ -17,6 +17,9 @@
 <br>
 <button onclick="task_6()">sixth task</button>
 <br>
+<button onclick="task_7()">seventh task</button>
+<br>
+<button onclick="task_8()">eighth task</button>
 <script>
     function task_1() {
         let a = 1, b = 1, c, d;
@@ -109,7 +112,7 @@
         // let param2 = +prompt(`your second param? `)
         let param1 = Math.floor(Math.random() * 100) - Math.floor(Math.random() * 100);
         let param2 = Math.floor(Math.random() * 100) - Math.floor(Math.random() * 100);
-        console.log(`первый параметр: ${param1} второй: ${param2}
+        console.log(`первый параметр: ${param1}, второй: ${param2}
         их сумма: ${aggiunta(param1, param2)}
         разность: ${sottrazione(param1, param2)}
         их произведение: ${moltiplicazione(param1, param2)}
@@ -119,32 +122,68 @@
     function aggiunta(param1, param2) {
         return param1 + param2
     }
+
     function sottrazione(param1, param2) {
         return param1 - param2
     }
+
     function moltiplicazione(param1, param2) {
         return param1 * param2
     }
+
     function divisione(param1, param2) {
         return param1 / param2
     }
 
 
     function task_6() {
+        let param1 = +prompt(`your first param? `)
+        let param2 = +prompt(`your second param? `)
+        let param3 = prompt(`select math action to do - (+,-,*,/): `)
+        console.log(`first param: ${param1}, second: ${param2}, math operand: ${param3}`)
+        console.log(`result: ${mathOperation(param1, param2, param3)}`)
+    }
 
+    function mathOperation(arg1, arg2, operand) {
+        switch (operand) {
+            case '+':
+                return aggiunta(arg1, arg2);
+                break;
+            case '-':
+                return sottrazione(arg1, arg2);
+                break
+            case '*':
+                return moltiplicazione(arg1, arg2);
+                break;
+            case '/':
+                return divisione(arg1, arg2);
+                break;
+        }
     }
 
     function task_7() {
-
+        console.log(null == 0) // false
+        console.log(typeof null) // значение null представляет собой намеренное отсутствие какого-либо значения объекта
+        console.log(typeof 0) // математический ноль
     }
 
     function task_8() {
+        // let param1 = Math.floor(Math.random() * 100) + 1;
+        // let param2 = Math.floor(Math.random() * 3) + 2;
+        let param1 = +prompt('введите число для возведения в степень: ');
+        let param2 = prompt('введите степень: ')
+        console.log(`Число ${param1} будет возведено в(-во) ${param2} степени`)
+        console.log(`Результат = ${power(param1, param2)}`)
+    }
 
+    function power(val, pow) {
+        if (pow == 1 || pow == 0) {
+            return val
+        } else {
+            return val * power(val, pow - 1)
+        }
     }
 </script>
-<button onclick="task_7()">seventh task</button>
-<br>
-<button onclick="task_8()">eighth task</button>
 
 </body>
 </html>
