@@ -17,9 +17,6 @@
 <br>
 <button onclick="task_6()">sixth task</button>
 <br>
-<button onclick="task_7()">seventh task</button>
-<br>
-<button onclick="task_8()">eighth task</button>
 <script>
     function task_1() {
         let a = 1, b = 1, c, d;
@@ -39,7 +36,14 @@
         console.log(x); // 5
     }
     function  task_3() {
-
+        let a = Math.floor(Math.random() * 100) - Math.floor(Math.random() * 100);
+        let b = Math.floor(Math.random() * 100) - Math.floor(Math.random() * 100);
+        console.log(a, b);
+        if (a > 0 && b > 0) {
+            a > b ? console.log(`разница переменных =  ${a - b}`) : console.log(`разница переменных =  ${b - a}`)
+        } else {
+            a < 0 && b < 0 ? console.log(`произведение = ${a * b}`) : console.log(`сумма = ${a + b}`)
+        }
     }
     function  task_4() {
 
@@ -57,6 +61,9 @@
 
     }
 </script>
+<button onclick="task_7()">seventh task</button>
+<br>
+<button onclick="task_8()">eighth task</button>
 
 </body>
 </html>
