@@ -30,12 +30,14 @@
         console.log(a) // за счет предыдущей итерации значение перемеенной изменилось
         console.log(b) // за счет предыдущей итерации значение перемеенной изменилось
     }
-    function  task_2() {
+
+    function task_2() {
         let a = 2;
         let x = 1 + (a *= 2); // умножение в скобках, изменение переменной, сложение с 1, запись в переменную
         console.log(x); // 5
     }
-    function  task_3() {
+
+    function task_3() {
         let a = Math.floor(Math.random() * 100) - Math.floor(Math.random() * 100);
         let b = Math.floor(Math.random() * 100) - Math.floor(Math.random() * 100);
         console.log(a, b);
@@ -45,19 +47,98 @@
             a < 0 && b < 0 ? console.log(`произведение = ${a * b}`) : console.log(`сумма = ${a + b}`)
         }
     }
-    function  task_4() {
+
+    function task_4() {
+        let a = Math.floor(Math.random() * 16);
+        console.log(`выпало число: ${a}`)
+        switch (a) {
+            case 0 :
+                console.log(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
+                break;
+            case 1 :
+                console.log(1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
+                break;
+            case 2 :
+                console.log(2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
+                break;
+            case 3 :
+                console.log(3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
+                break;
+            case 4 :
+                console.log(4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
+                break;
+            case 5 :
+                console.log(5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
+                break;
+            case 6 :
+                console.log(6, 7, 8, 9, 10, 11, 12, 13, 14, 15);
+                break;
+            case 7 :
+                console.log(7, 8, 9, 10, 11, 12, 13, 14, 15);
+                break;
+            case 8 :
+                console.log(8, 9, 10, 11, 12, 13, 14, 15);
+                break;
+            case 9 :
+                console.log(9, 10, 11, 12, 13, 14, 15);
+                break;
+            case 10 :
+                console.log(10, 11, 12, 13, 14, 15);
+                break;
+            case 11 :
+                console.log(11, 12, 13, 14, 15);
+                break;
+            case 12 :
+                console.log(12, 13, 14, 15);
+                break;
+            case 13 :
+                console.log(13, 14, 15);
+                break;
+            case 14 :
+                console.log(14, 15);
+                break;
+            case 15 :
+                console.log(15);
+                break;
+        }
 
     }
-    function  task_5() {
+
+    function task_5() {
+        // let param1 = +prompt(`your first param? `)
+        // let param2 = +prompt(`your second param? `)
+        let param1 = Math.floor(Math.random() * 100) - Math.floor(Math.random() * 100);
+        let param2 = Math.floor(Math.random() * 100) - Math.floor(Math.random() * 100);
+        console.log(`первый параметр: ${param1} второй: ${param2}
+        их сумма: ${aggiunta(param1, param2)}
+        разность: ${sottrazione(param1, param2)}
+        их произведение: ${moltiplicazione(param1, param2)}
+        результат деления: ${divisione(param1, param2)}`);
+    }
+
+    function aggiunta(param1, param2) {
+        return param1 + param2
+    }
+    function sottrazione(param1, param2) {
+        return param1 - param2
+    }
+    function moltiplicazione(param1, param2) {
+        return param1 * param2
+    }
+    function divisione(param1, param2) {
+        return param1 / param2
+    }
+
+
+    function task_6() {
 
     }
-    function  task_6() {
+
+    function task_7() {
 
     }
-    function  task_7() {
 
-    }
-    function  task_8() {
+    function task_8() {
 
     }
 </script>
