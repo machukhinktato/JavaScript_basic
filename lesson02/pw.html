@@ -109,6 +109,7 @@
         }
 
     }
+
     function task_4v2() {
         let a = Math.floor(Math.random() * 16);
         switch (a) {
@@ -226,9 +227,18 @@
         }
     }
 
-    function task_8v2(val, pow) {
-        if (pow >= 0) {
-            return pow ? 1 : pow(val, pow -1)
+    function task_8v2() {
+        let arg1 = 8;
+        // let arg1 = Math.floor(Math.random() * 100) + 1;
+        // let arg2 = Math.floor(Math.random() * 3) + 2;
+        let arg2 = 2;
+        console.log(`${pow(arg1, arg2)}`);
+        console.log(!1);
+    }
+
+    function pow(val, power) {
+        if (power >= 0) {
+            return !power ? 1 : val * pow(val, power - 1)
         }
     }
 </script>
