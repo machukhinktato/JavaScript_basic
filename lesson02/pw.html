@@ -12,6 +12,8 @@
 <button onclick="task_3()">thrid task</button>
 <br>
 <button onclick="task_4()">fourth task</button>
+<button onclick="task_4v2()">fourth task</button>
+<button onclick="task_4()">fourth task</button>
 <br>
 <button onclick="task_5()">fifth task</button>
 <br>
@@ -20,6 +22,7 @@
 <button onclick="task_7()">seventh task</button>
 <br>
 <button onclick="task_8()">eighth task</button>
+<button onclick="task_8v2()">eighth task</button>
 <script>
     function task_1() {
         let a = 1, b = 1, c, d;
@@ -106,6 +109,45 @@
         }
 
     }
+    function task_4v2() {
+        let a = Math.floor(Math.random() * 16);
+        switch (a) {
+            case 0:
+                a++;
+            case 1:
+                a++;
+            case 2:
+                a++;
+            case 3:
+                a++;
+            case 4:
+                a++;
+            case 5:
+                a++;
+            case 6:
+                a++;
+            case 7:
+                a++;
+            case 8:
+                a++;
+            case 9:
+                a++;
+            case 10:
+                a++;
+            case 11:
+                a++;
+            case 12:
+                a++;
+            case 13:
+                a++;
+            case 14:
+                a++;
+            case 15:
+                a++;
+            default:
+                console.log(a++)
+        }
+    }
 
     function task_5() {
         // let param1 = +prompt(`your first param? `)
@@ -181,6 +223,12 @@
             return val
         } else {
             return val * power(val, pow - 1)
+        }
+    }
+
+    function task_8v2(val, pow) {
+        if (pow >= 0) {
+            return pow ? 1 : pow(val, pow -1)
         }
     }
 </script>
