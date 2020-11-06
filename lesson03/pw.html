@@ -56,7 +56,7 @@
 
         while (play) {
             if (plays) {
-                let user = prompt(...'Enter number: ');
+                let user = [...prompt('Enter number: ')];
                 play = checkUser();
                 console.log(play ? `${--rounds} rounds left..` : `User wins, your reached target ${target}`)
             } else {
@@ -67,7 +67,10 @@
     }
 
     function checkUser() {
+        let bulls = 0;
+        let cows = 0;
 
+        return bulls == 4 ? false : true
     }
 
     function getNumber() {
