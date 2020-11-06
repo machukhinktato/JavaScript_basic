@@ -15,28 +15,28 @@
 
 
 <script>
-    function task_1(lim) {
-        let arrSimples = [2];
-        let num = 3;
+    function task_1(limiter) {
+        let arr = [2];
+        let number = 3;
 
-        while (num <= lim) {
-            if (check(num, arrSimples)) {
-                arrSimples.push(num);
+        while (number <= limiter) {
+            if (simpleNum(number, arr)) {
+                arr.push(number);
             }
-            num++
+            number++
         }
-        return arrSimples;
+        return console.log(arr);
     }
 
-    function check(number, arr) {
-        let analyze = true;
+    function simpleNum(number, arr) {
+        let simple = true;
 
         arr.forEach(el => {
             if (!(number % el)) {
-                analyze = false;
+                simple = false;
             }
         });
-        return analyze
+        return simple
     }
 
     function task_2(floors) {
@@ -50,7 +50,6 @@
             console.log(str);
         }
     }
-
 </script>
 
 </body>
