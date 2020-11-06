@@ -49,21 +49,37 @@
         }
     }
 
-    function task_3(){
+    function task_3() {
         let plays = 10;
         let play = true;
         let target = getNumber();
 
-        while(play) {
+        while (play) {
             if (plays) {
                 let user = prompt(...'Enter number: ');
                 play = checkUser();
-                console.log(play ? `${--rounds} rounds left..` : `User win, your reached target ${target}`)
+                console.log(play ? `${--rounds} rounds left..` : `User wins, your reached target ${target}`)
             } else {
                 console.log('YOU LOSE');
                 play = false;
             }
         }
+    }
+
+    function checkUser() {
+
+    }
+
+    function getNumber() {
+        let arr = [];
+
+        while (arr.length < 4) {
+            let rnd = Math.floor(Math.random() * 10);
+            if (!arr.includes(rnd)) {
+                arr.push(rnd)
+            }
+        }
+        return arr
     }
 </script>
 
