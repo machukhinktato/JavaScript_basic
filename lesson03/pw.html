@@ -10,8 +10,6 @@
 <button onclick="task_2(20)">second task</button>
 <br>
 <button onclick="task_3()">thrid task</button>
-<br>
-<button onclick="task_4()">fourth task</button>
 
 
 <script>
@@ -48,6 +46,23 @@
                 str += 'x';
             }
             console.log(str);
+        }
+    }
+
+    function task_3(){
+        let plays = 10;
+        let play = true;
+        let target = getNumber();
+
+        while(play) {
+            if (plays) {
+                let user = prompt(...'Enter number: ');
+                play = checkUser();
+                console.log(play ? `${--rounds} rounds left..` : `User win, your reached target ${target}`)
+            } else {
+                console.log('YOU LOSE');
+                play = false;
+            }
         }
     }
 </script>
