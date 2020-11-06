@@ -16,19 +16,30 @@
 
 
 <script>
-    function task_1(){
-        let limit = 0
-        let arr = [2]
-        // while (limit !== 101) {
-        // if (limit > 1){
-        for (let number = 2; number !== 101; number++) {
-            arr.push(number)
+    function task_1(lim){
+        let arrSimples = [2];
+        let num = 3;
+
+        while (num <= lim) {
+            if (check(num, arrSimples)) {
+                arrSimples.push(num);
+            }
+            num++
         }
-        // }
-        console.log(arr)
-            // limit++
-        // }
+        return arrSimples;
     }
+
+    function check(number, arr) {
+        let analyze = true;
+
+        arr.forEach(el => {
+            if (!(number % el)) {
+                analyze = false;
+            }
+        });
+        return analyze
+    }
+
 </script>
 
 </body>
