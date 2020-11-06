@@ -14,9 +14,8 @@
 <button onclick="task_4()">fourth task</button>
 
 
-
 <script>
-    function task_1(lim){
+    function task_1(lim) {
         let arrSimples = [2];
         let num = 3;
 
@@ -38,6 +37,18 @@
             }
         });
         return analyze
+    }
+
+    function task_2(floors) {
+        let firstArr = []
+        for (let floor = 1; floor < floors; floor++) {
+            let str = '';
+            let secArr = floor;
+            for (let i = 1; i <= secArr; i++) {
+                str += 'x';
+            }
+            console.log(str);
+        }
     }
 
 </script>
