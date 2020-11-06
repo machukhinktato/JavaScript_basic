@@ -70,7 +70,14 @@
         let bulls = 0;
         let cows = 0;
 
-        return bulls == 4 ? false : true
+        for (let i = 0; i < 4; I++) {
+            if (+u[i] === g[i]) {
+                bulls++;
+            } else if (g.includes(+u[i])) {
+                cows++
+            }
+        }
+            return bulls == 4 ? false : true
     }
 
     function getNumber() {
