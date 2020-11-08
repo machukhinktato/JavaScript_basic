@@ -66,18 +66,21 @@
         }
     }
 
-    function checkUser() {
+    function checkUser(u, g) {
         let bulls = 0;
         let cows = 0;
 
-        for (let i = 0; i < 4; I++) {
+        for (let i = 0; i < 4; i++) {
             if (+u[i] === g[i]) {
                 bulls++;
             } else if (g.includes(+u[i])) {
                 cows++
             }
         }
-            return bulls == 4 ? false : true
+        analise(bulls, cows, u);
+
+        return bulls == 4 ? false : true
+
     }
 
     function getNumber() {
@@ -90,6 +93,13 @@
             }
         }
         return arr
+    }
+
+    function analise(b, c, us) {
+        console.log(`
+        user: ${us} \n
+        bulls: ${b}; cows${c}
+        `);
     }
 </script>
 
