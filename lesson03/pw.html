@@ -53,12 +53,13 @@
         let plays = 10;
         let play = true;
         let target = getNumber();
+        console.log(target);
 
         while (play) {
             if (plays) {
                 let user = [...prompt('Enter number: ')];
-                play = checkUser();
-                console.log(play ? `${--rounds} rounds left..` : `User wins, your reached target ${target}`)
+                play = checkUser(user, target);
+                console.log(play ? `${--plays} rounds left..` : `User wins, your reached target ${target}`)
             } else {
                 console.log('YOU LOSE');
                 play = false;
@@ -74,7 +75,7 @@
             if (+u[i] === g[i]) {
                 bulls++;
             } else if (g.includes(+u[i])) {
-                cows++
+                cows++;
             }
         }
         analise(bulls, cows, u);
