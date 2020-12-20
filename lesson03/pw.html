@@ -59,7 +59,7 @@
             if (plays) {
                 let user = [...prompt('Enter number: ')];
                 play = checkUser(user, target);
-                console.log(play ? `${--plays} rounds left..` : `User wins, your reached target ${target}`)
+                console.log(play ? `${--plays} plays left` : `You win, your target was reached ${target}`)
             } else {
                 console.log('YOU LOSE');
                 play = false;
@@ -68,8 +68,8 @@
     }
 
     function checkUser(u, g) {
-        let bulls = 0;
-        let cows = 0;
+        let bulls = 0; // hit
+        let cows = 0; // presence
 
         for (let i = 0; i < 4; i++) {
             if (+u[i] === g[i]) {
@@ -78,7 +78,7 @@
                 cows++;
             }
         }
-        analise(bulls, cows, u);
+        console.log(`${bulls}, ${cows}, ${u}`);
 
         return bulls == 4 ? false : true
 
@@ -96,12 +96,12 @@
         return arr
     }
 
-    function analise(b, c, us) {
-        console.log(`
-        user: ${us} \n
-        bulls: ${b}; cows${c}
-        `);
-    }
+    // function analise(b, c, us) {
+    //     console.log(`
+    //     user: ${us} \n
+    //     bulls: ${b}; cows${c}
+    //     `);
+    // }
 </script>
 
 </body>
