@@ -10,6 +10,10 @@
 <button onclick="task_2(20)">second task</button>
 <br>
 <button onclick="task_3()">thrid task</button>
+<br>
+<button onclick="task_4(20)">fourth task</button>
+<br>
+<button onclick="task_5(20)">fourth task</button>
 
 
 <script>
@@ -94,6 +98,31 @@
             }
         }
         return arr
+    }
+
+
+    function task_4(layers) {
+        for (let layer = 1; layer < layers; layer++) {
+            let str = ``;
+            let numberOfCrosses = layer;
+            for (let i = 1; i <= numberOfCrosses; i++) {
+                str += `x`;
+            }
+            console.log(str);
+        }
+    }
+
+    function task_5 (layers) {
+        let commonArr = [];
+        for (let layer = 1; layer < layers; layer++) {
+            let row = [];
+            let numberOfCrosses = layer;
+            for (let i = 1; i <= layers; i++) {
+                row.push(i <= numberOfCrosses ? 'x' : 'O');
+            }
+            commonArr.push(row);
+        }
+        console.log(commonArr);
     }
 
     // function analise(b, c, us) {
