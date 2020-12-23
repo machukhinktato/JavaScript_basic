@@ -5,23 +5,26 @@
     <title>Title</title>
 </head>
 <body>
-<button onclick="task_1"><h3>FIRST TASK</h3></button>
+<button onclick="task_1()"><h3>FIRST TASK</h3></button>
 
 </body>
 <script>
     function task_1() {
         let num = [...prompt('please enter a number: ')]
-
-        while (num.length < 3) {
-            num.unshift(0)
+        if (num.length > 3) {
+            console.log('try to enter a number less than 1000')
+        } else {
+            while (num.length < 3) {
+                num.unshift(0)
+            }
+            result = {
+                hundreds: +num[0],
+                tenths: +num[1],
+                units: +num[2],
+            }
+            console.log(result)
+            return result
         }
-        result = {
-            hundreds: +num[0],
-            tenths: +num[1],
-            units: +num[2],
-        }
-        console.log(result)
-        return result
     }
 </script>
 </html>
