@@ -10,23 +10,18 @@
 </body>
 <script>
     function task_1() {
-        let arr = []
-        let num = [...prompt("Enter a number: ")]
-        if (check) {
-            let result = {
-                'sotni': +num[0],
-                'desyatki': +num[1],
-                'edinitsy': +num[2],
-            }
-        }
+        let num = [...prompt('please enter a number: ')]
 
-        function check () {
-            pass
+        while (num.length < 3) {
+            num.unshift(0)
         }
-        // num.forEach(el => {
-        // console.log(el[])
-        // })
+        result = {
+            hundreds: +num[0],
+            tenths: +num[1],
+            units: +num[2],
+        }
         console.log(result)
+        return result
     }
 </script>
 </html>
