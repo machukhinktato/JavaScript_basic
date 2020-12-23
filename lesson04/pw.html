@@ -6,6 +6,7 @@
 </head>
 <body>
 <button onclick="task_1()"><h3>FIRST TASK</h3></button>
+<button onclick="task_2()"><h3>SECOND TASK</h3></button>
 
 </body>
 <script>
@@ -25,6 +26,24 @@
             console.log(result)
             return result
         }
+    }
+
+    function task_2() {
+        let cars = ['ford', 'mercedes', 'bmw', 'lada', 'nissan'];
+        let price = [100000, 3000000, 3000000, 250000, 700000];
+
+        goods = {
+            cars: cars,
+            price: price
+        }
+
+        let result = 0;
+
+        goods.price.forEach(el => {
+            result += el
+        })
+        console.log(result)
+        alert(result)
     }
 </script>
 </html>
