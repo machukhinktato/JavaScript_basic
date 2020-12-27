@@ -33,4 +33,11 @@ const basket = {
         this.container.innerHTML = htmlStr;
         this._calcSum();
     },
+    _calcSum() {
+        this.sum = 0;
+        this.items.forEach((item, i) =>{
+            this.sum += item.productAmount * item.productPrice;
+        });
+        this.totalContainer.innerText = this.sum;
+    },
 }
