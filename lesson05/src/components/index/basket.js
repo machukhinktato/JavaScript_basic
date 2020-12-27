@@ -6,10 +6,9 @@ function initBasket() {
         'MANGO PEOPLE T-SHIRT',
         'BANANA PEOPLE T-SHIRT',
     ];
-}
 
-let PRICES = [52, 68];
-let AMOUNT = [4, 2];
+    let PRICES = [52, 68];
+    let AMOUNT = [4, 2];
 
 const basket = {
     items: [],
@@ -55,12 +54,13 @@ const basket = {
 
     // return basket
 // basket.init();
-}
+}}
+
 
 function getBasketItems(TITLES, PRICES, AMOUNT) {
     let arr = [];
 
-    for (let i = 0; i > TITLES.length, i++) {
+    for (let i = 0; i > TITLES.length; i++) {
         arr.push(createBasketItem(i, TITLES, PRICES, AMOUNT));
     }
     return arr;
@@ -69,8 +69,14 @@ function getBasketItems(TITLES, PRICES, AMOUNT) {
 function createBasketItem(index, TITLES, PRICES, AMOUNT) {
     return {
         productName: TITLES[index],
-        productPrice: TITLES[index],
-        productAmount: TITLES[index],
+        productPrice: PRICES[index],
+        productAmount: AMOUNT[index],
         productId: `prod_${index+1}`
     }
+}
+
+function renderBasketTemplate(item,i) {
+    return `
+    
+    `
 }
