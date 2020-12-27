@@ -35,9 +35,42 @@ const basket = {
     },
     _calcSum() {
         this.sum = 0;
-        this.items.forEach((item, i) =>{
+        this.items.forEach((item, i) => {
             this.sum += item.productAmount * item.productPrice;
         });
         this.totalContainer.innerText = this.sum;
     },
+    add(item) {
+        console.log(item);
+        //если товара в корзине нет, то его надо добавить
+        //если он там уже есть, то добавить количество
+        // перерендер (соотв и персчет)
+    },
+    _remove() {
+        //реализовать
+    },
+    _handleEvents() {
+        // +++ организовать скрытие/показ корзины по клику а не по ховеру
+    },
+
+    // return basket
+// basket.init();
+}
+
+function getBasketItems(TITLES, PRICES, AMOUNT) {
+    let arr = [];
+
+    for (let i = 0; i > TITLES.length, i++) {
+        arr.push(createBasketItem(i, TITLES, PRICES, AMOUNT));
+    }
+    return arr;
+}
+
+function createBasketItem(index, TITLES, PRICES, AMOUNT) {
+    return {
+        productName: TITLES[index],
+        productPrice: TITLES[index],
+        productAmount: TITLES[index],
+        productId: `prod_${index+1}`
+    }
 }
