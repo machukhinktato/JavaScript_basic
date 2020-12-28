@@ -194,6 +194,95 @@ header #basket #basket-inner {
     z-index: 1;
 }
 
+
+header #basket .cart_item {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+header #basket .cart_item img {
+    display: block;
+    width: 72px;
+    height: 85px;
+    transition: 0.3s;
+}
+
+header #basket .cart_item img:hover {
+    transform: scale(1.2);
+}
+
+header #basket .cart_descr {
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+header #basket .cart_descr .stars {
+    font-size: 12px;
+    line-height: 1.2;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #e4af48;
+}
+
+header #basket .cart_title {
+    font-size: 12px;
+    line-height: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #222222;
+}
+
+header #basket .cart_price {
+    font-size: 12px;
+    line-height: normal;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #f16d7f;
+}
+
+header #basket .cart_close {
+    display: block;
+}
+
+header #basket .cart_close i {
+    font-size: 16px;
+    line-height: normal;
+    text-transform: uppercase;
+    color: #c0c0c0;
+}
+
+header #basket .cart_total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header #basket .cart_total p {
+    font-size: 16px;
+    line-height: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #222222;
+}
+
+header #basket .cart_btn {
+    width: 100%;
+    min-height: 50px;
+    background-color: #ffffff;
+    border: 1px solid #eaeaea;
+    font-size: 14px;
+    line-height: normal;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #4a4a4a;
+    transition: 0.5s;
+}
+
+
 header .myAccount {
     width: 130px;
     height: 38px;
