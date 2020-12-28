@@ -52,18 +52,18 @@ function initCatalog() {
 }
 
 
-function getItems() {
+function getCatalogItems(TITLES, PRICES) {
     let arr = [];
 
     for (let i = 0; i < TITLES.length; i++) {
-        arr.push(createItem(i));
+        arr.push(createCatalogItem(i, TITLES, PRICES));
     }
 
     return arr;
 }
 
 
-function createItem(index) {
+function createCatalogItem(index, TITLES, PRICES) {
     return {
         productName: TITLES[index],
         productPrice: PRICES[index],
