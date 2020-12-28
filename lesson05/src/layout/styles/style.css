@@ -125,19 +125,22 @@ header .searchButton {
   width: 38px;
 }
 
-header .cart {
+header #basket {
+  position: relative;
+  display: inline-block;
   margin-left: auto;
   margin-right: 25px;
+  cursor: pointer;
 }
 
 @media (max-width: 993px) {
-  header .cart {
+  header #basket {
     margin: 0 15px;
   }
 }
 
 @media (max-width: 770px) {
-  header .cart {
+  header #basket {
     margin: 10px 0;
   }
 }
