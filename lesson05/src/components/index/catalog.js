@@ -71,7 +71,7 @@ function createCatalogItem(index, TITLES, PRICES) {
     }
 }
 
-function renderCatalogItem() {
+function renderCatalogTemplate() {
     return `
             <div class="featuredItem">
             <div class="featuredImgWrap">
