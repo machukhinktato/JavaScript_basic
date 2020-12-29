@@ -70,3 +70,28 @@ function createCatalogItem(index, TITLES, PRICES) {
         productId: `prod_${index + 1}` //'prod_1'
     }
 }
+
+function renderCatalogItem() {
+    return `
+            <div class="featuredItem">
+            <div class="featuredImgWrap">
+                <div class="featuredBuy">
+                    <button 
+                        name="add"
+                        data-id="${item.productId}"
+                    >
+                        <img src="../src/assets/images/addToCart.png" alt="">
+                        Add to Cart
+                    </button>
+                </div>
+                <img class="featuredProduct" src="../src/assets/images/featuredItem${1 + i}.jpg" alt="">
+            </div>
+            <div class="featuredNameAndPrice">
+                <div class="featuredItemName">
+                    ${item.productName}
+                </div>
+                <div class="featuredItemPrice">$${item.productPrice}</div>
+            </div>
+        </div>
+    `
+}
