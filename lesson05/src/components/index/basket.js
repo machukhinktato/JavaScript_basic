@@ -21,6 +21,7 @@ function initBasket() {
             this.container = document.querySelector('#basket-items');
             this.wrapper = document.querySelector('#basket-inner');
             this.totalContainer = document.querySelector('#basket-sum');
+            // this.items = getBasketItems(TITLES, PRICES, AMOUNT);
             this.items = getBasketItems(TITLES, PRICES, AMOUNT);
             this._render();
         },
@@ -52,7 +53,7 @@ function initBasket() {
             // +++ организовать скрытие/показ корзины по клику а не по ховеру
         }
     }
-    // return basket
+    return basket
 // basket.init();
 }
 

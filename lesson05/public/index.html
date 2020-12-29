@@ -371,8 +371,18 @@
 </div>
 
 
-<script src="../src/components/index/catalog.js"></script>
+
+
 <script src="../src/components/index/basket.js"></script>
+<script src="../src/components/index/catalog.js"></script>
+<script>
+    var basket;
+    basket = initBasket();
+    basket.init();
+    var catalog;
+    catalog = initCatalog();
+    catalog.init();
+</script>
 </body>
 
 </html>

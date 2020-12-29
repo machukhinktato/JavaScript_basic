@@ -56,14 +56,14 @@ function getCatalogItems(TITLES, PRICES) {
     let arr = [];
 
     for (let i = 0; i < TITLES.length; i++) {
-        arr.push(createCatalogItem(i, TITLES, PRICES));
+        arr.push(createCatalogItems(i, TITLES, PRICES));
     }
 
     return arr;
 }
 
 
-function createCatalogItem(index, TITLES, PRICES) {
+function createCatalogItems(index, TITLES, PRICES) {
     return {
         productName: TITLES[index],
         productPrice: PRICES[index],
