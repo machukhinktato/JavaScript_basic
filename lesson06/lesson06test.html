@@ -6,9 +6,35 @@
 </head>
 <body>
 
-
+<div id="big_picture"></div>
+<div id="gallery">
+    <p id="mega">ULTRA</p>
+</div>
 
 <script src="./onlesson.js"></script>
-<script>window.onload (myProccesor())</script>
+<script>window.onload(myProccesor())</script>
+<script>
+    let smth = document.getElementById("mega");
+    smth.onclick = changeText;
+</script>
+<!--function init(){-->
+<!--	var images = document.getElementsByTagName("img");-->
+<!--	for (var i = 0; i < images.length; i++) {-->
+<!--		images[i].onclick = changeBigPicture;-->
+<!--	}-->
+<!--}-->
+<!--function changeBigPicture(eventObj){-->
+<!--	var appDiv = document.getElementById("big_picture");-->
+<!--	appDiv.innerHTML = "";	-->
+<!--	var eventElement = eventObj.target;-->
+<!--	var imageNameParts = eventElement.id.split("_");-->
+<!--	var src = "img/gallery/big/" + imageNameParts[1] + ".jpg";-->
+<!--	var imageDomElement = document.createElement("img");-->
+<!--	imageDomElement.src = src;-->
+<!--	appDiv.appendChild(imageDomElement);-->
+<!--}-->
+<!--window.onload = init;-->
+
+
 </body>
 </html>
