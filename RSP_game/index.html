@@ -7,16 +7,28 @@
     <script src="./scripts.js"></script>
 </head>
 <body>
-<div class="container">
-    <button class="choise">
+<div id="container">
+    <button id="choice">
         <img src="./img/rock.png" alt="" class="icon">
     </button>
-    <button class="choise">
+    <button id="choice">
         <img style="width: 145px;" src="./img/scissors.png" alt="" class="icon">
     </button>
-    <button class="choise">
+    <button id="choice">
         <img src="./img/paper.png" alt="" class="icon">
     </button>
+    <script>
+        function init() {
+        var iamge = document.getElementById('container');
+        iamge.onclick = ok;
+
+        function ok(eventObj) {
+            console.log(eventObj);
+        }
+        }
+
+        window.onload = init;
+    </script>
 
 
 </div>

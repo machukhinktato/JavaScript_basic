@@ -13,3 +13,12 @@ function cpuChoise() {
     return choise
 }
 
+// function evntLstnr() {
+//     let evnt = document.getElementById('choice')
+//     evnt.onclick(sendInfo, )
+//     return aftEvnt
+// }
+//
+// function sendInfo(event) {
+//     console.log(event.target)
+// }
