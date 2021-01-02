@@ -8,22 +8,22 @@
 </head>
 <body>
 <div id="container">
-    <button id="choice">
+    <button id="choice_1">
         <img src="./img/rock.png" alt="" class="icon">
     </button>
-    <button id="choice">
+    <button id="choice_2">
         <img style="width: 145px;" src="./img/scissors.png" alt="" class="icon">
     </button>
-    <button id="choice">
+    <button id="choice_3">
         <img src="./img/paper.png" alt="" class="icon">
     </button>
     <script>
         function init() {
-        var iamge = document.getElementById('container');
-        iamge.onclick = ok;
+        let image = document.getElementById('container');
+        image.onclick = ok;
 
         function ok(eventObj) {
-            console.log(eventObj);
+            console.log(eventObj.target);
         }
         }
 

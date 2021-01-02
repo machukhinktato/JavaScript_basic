@@ -22,3 +22,4 @@ function cpuChoise() {
 // function sendInfo(event) {
 //     console.log(event.target)
 // }
+
