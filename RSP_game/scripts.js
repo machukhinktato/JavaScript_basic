@@ -1,16 +1,23 @@
-function init() {
+function init(choice) {
     arr = ['rock', 'scissors', 'paper']
-    result = arr[cpuChoise()]
-    console.log(result)
+    console.log(arr[choice])
 }
+
 function userPick() {
-    let choise = [...prompt('enter a number')]
-    console.log(choise)
+    let container = document.getElementById('container')
+    container.addEventListener(onclick, ok)
+    // console.log(container.target)
+    // contianer.onclick = ok;
 }
+
 function cpuChoise() {
     let choise = Math.floor(Math.random() * 3)
     console.log(choise)
     return choise
+}
+
+function ok(eventObj) {
+    console.log(eventObj.target);
 }
 
 // function evntLstnr() {

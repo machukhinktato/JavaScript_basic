@@ -7,32 +7,35 @@
     <script src="./scripts.js"></script>
 </head>
 <body>
+
 <div id="container">
-    <button id="choice_1">
-        <img src="./img/rock.png" alt="" class="icon">
+    <button id="choice_1" onclick="init(0)">
+    <img src="
+        ./img/rock.png" alt="" class=" icon_1">
     </button>
-    <button id="choice_2">
-        <img style="width: 145px;" src="./img/scissors.png" alt="" class="icon">
+    <button id=" choice_2" onclick="init(1)">
+        <img src="./img/scissors.png" alt="" style=" width: 145px;" class="icon_2">
     </button>
-    <button id="choice_3">
-        <img src="./img/paper.png" alt="" class="icon">
+    <button id="choice_3" onclick="init(2)">
+        <img src="./img/paper.png" alt="" class="icon_3">
     </button>
-    <script>
-        function init() {
-        let image = document.getElementById('container');
-        image.onclick = ok;
-
-        function ok(eventObj) {
-            console.log(eventObj.target);
-        }
-        }
-
-        window.onload = init;
-    </script>
-
-
 </div>
+<script>
+    // function init() {
+    //     let image = document.getElementById('container');
+    //     image.onclick = ok;
+    //
+    //     function ok(eventObj) {
+    //         console.log(eventObj.target);
+    //         if (eventObj.target.hasClass('icon_2')) {
+    //             console.log('YES MAN')
+    //         }
+    //     }
+    // }
+    //
+    // window.onload = init;
 
+</script>
 
 </body>
 </html>
