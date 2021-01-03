@@ -1,13 +1,24 @@
 function init(choice) {
+    let score = {
+        'user':0,
+        'cpu':0,
+    }
     arr = ['rock', 'scissors', 'paper']
-    console.log(arr[choice])
+    let userPick = arr[choice]
+    let cpuTurn = arr[cpuChoise()]
+    let winner = resCheck(userPick, cpuTurn, score)
+    console.log(`${userPick}, ${cpuTurn}`)
+    console.log(score)
+
 }
 
-function userPick() {
-    let container = document.getElementById('container')
-    container.addEventListener(onclick, ok)
-    // console.log(container.target)
-    // contianer.onclick = ok;
+function resCheck(usr, cpu, score) {
+    if (usr == cpu) {
+        pass
+    }
+    else if (usr == 'rock' && cpu == 'scissors') {
+        score.user += 1
+    }
 }
 
 function cpuChoise() {
@@ -15,18 +26,3 @@ function cpuChoise() {
     console.log(choise)
     return choise
 }
-
-function ok(eventObj) {
-    console.log(eventObj.target);
-}
-
-// function evntLstnr() {
-//     let evnt = document.getElementById('choice')
-//     evnt.onclick(sendInfo, )
-//     return aftEvnt
-// }
-//
-// function sendInfo(event) {
-//     console.log(event.target)
-// }
-
