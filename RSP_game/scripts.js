@@ -16,8 +16,11 @@ function resCheck(usr, cpu, score) {
     if (usr == cpu) {
         pass
     }
-    else if (usr == 'rock' && cpu == 'scissors') {
+    else if (usr == 'rock' && cpu == 'scissors' || usr == 'paper' && cpu == 'rock' || usr = 'scissors' && cpu == 'paper') {
         score.user += 1
+    }
+    else {
+        score.cpu += 1
     }
 }
 
