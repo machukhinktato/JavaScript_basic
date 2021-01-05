@@ -1,25 +1,24 @@
 function init(choice) {
     let score = {
-        'user':0,
-        'cpu':0,
+        'user': 0,
+        'cpu': 0,
     }
     arr = ['rock', 'scissors', 'paper']
-    let userPick = arr[choice]
-    let cpuTurn = arr[cpuChoise()]
-    let winner = resCheck(userPick, cpuTurn, score)
-    console.log(`${userPick}, ${cpuTurn}`)
-    console.log(score)
-
+    while (score.user < 10 && score.cpu < 10) {
+        let userPick = arr[choice]
+        let cpuTurn = arr[cpuChoise()]
+        let winner = resCheck(userPick, cpuTurn, score)
+        console.log(`${userPick}, ${cpuTurn}`)
+        console.log(score)
+    }
 }
 
 function resCheck(usr, cpu, score) {
     if (usr == cpu) {
-        pass
-    }
-    else if (usr == 'rock' && cpu == 'scissors' || usr == 'paper' && cpu == 'rock' || usr == 'scissors' && cpu == 'paper') {
+        console.log('due')
+    } else if (usr == 'rock' && cpu == 'scissors' || usr == 'paper' && cpu == 'rock' || usr == 'scissors' && cpu == 'paper') {
         score.user += 1
-    }
-    else {
+    } else {
         score.cpu += 1
     }
 }
