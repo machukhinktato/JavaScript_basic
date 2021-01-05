@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Game</title>
+</head>
+
+<style>
+    .rock {
+        width: 200px;
+        height: 200px;
+        margin: 20px;
+        /* background-image: url(rock.jpg); */
+        display: inline-block;
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    .scissors {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        margin: 20px;
+        /* background-image: url(scr.png); */
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    .paper {
+        display: inline-block;
+        width: 200px;
+        height: 200px;
+        margin: 20px;
+        /* background-image: url(paper.png); */
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+
+    #field {
+        display: flex;
+    }
+</style>
+<body>
+    <div id="field">
+        <div>
+            <img src="rock.jpg" alt="" class="rock">
+            <button onclick="rock_game(0)">Rock</button>
+        </div>
+        <div>
+            <img src="scr.png" alt="" class="scissors">
+            <button onclick="rock_game(1)">Rock</button>
+        </div>
+        <div>
+            <img src="paper.png" alt="" class="paper">
+            <button onclick="rock_game(2)">Rock</button>
+        </div>
+    </div>
+    
+
+    <div id="results">
+        <p>
+            <strong>
+                User:
+            </strong>
+            <span id="user-variant"></span>
+        </p>
+        <p>
+            <strong>
+                PC:
+            </strong>
+            <span id="pc-variant"></span>
+        </p>
+        <p id="score">
+
+        </p>
+    </div>
+    <script>
+        function rock_game(user) {
+            let terminator_ans = Math.floor(Math.random() * 3);
+            let names = ['Rock', 'Scissors', 'Paper'];
+            let game = {
+                user: user,
+                terminator: terminator_ans,
+                winner: null,
+                check() {
+                    let winner = null;
+
+
+                    if ((this.user == 0 && this.terminator == 1) || (this.user == 1 && this.terminator == 2) || (this.user == 2 && this.terminator == 0)) {
+                        this.winner = 'user';
+                    } else if (this.user == this.terminator) {
+                        this.winner = 'Both';
+                    } else {
+                        this.winner = 'pc';
+                    }
+
+                    this._render();
+                },
+                _render() {
+                    let userText = names[this.user];
+                    let pcText = names[this.terminator];
+
+                    let userSpan = document.querySelector('#user-variant');
+                    let pcSpan = document.querySelector('#pc-variant');
+                    let resultBlock = document.querySelector('#score');
+
+                    userSpan.innerText = userText;
+                    pcSpan.innerText = pcText;
+
+                    resultBlock.innerHTML += `${this.winner} победил; Человечество: ${userText}, Машинный разум улья: ${pcText}<br>`
+                }
+            };
+            game.check()
+        }
+        // rock_game();
+    </script>
+</body>
+</html>
