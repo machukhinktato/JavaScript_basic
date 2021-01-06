@@ -75,6 +75,7 @@
                 <button name="operator" data-value="Mul">*</button>
                 <button name="operator" data-value="Del">/</button>
                 <button name="result">=</button>
+                <button id="clear">C</button>
 
             </div>
         </div>
@@ -83,6 +84,7 @@
     <script>
         const numbersKeys = document.querySelector('#nums');
         const operatorsKeys = document.querySelector('#ops');
+        const clearKey = document.querySelector('#clear')
 
         const calc = {
             numberA: 0,
@@ -97,6 +99,11 @@
             _handleEvents() {
                 numbersKeys.addEventListener('click', this._addNumber.bind(this));
                 operatorsKeys.addEventListener('click', this._opHandler.bind(this));
+                clearKey.addEventListener('click', this._clearScrn.bind(this));
+            },
+
+            _clearScrn(evt) {
+                this.numberA = 0; this.numberB = 0;
             },
 
             _addNumber(evt) {
