@@ -52,6 +52,10 @@
             font-size: 2em;
             color: #950101
         }
+
+        #screen {
+            text-align: right;
+        }
     </style>
 </head>
 <body>
@@ -95,6 +99,7 @@
             
             init() {
                 this._handleEvents();
+                this.screen.value = 0;
             },
             _handleEvents() {
                 numbersKeys.addEventListener('click', this._addNumber.bind(this));
