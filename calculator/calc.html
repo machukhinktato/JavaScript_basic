@@ -59,15 +59,15 @@
         <input type="text" name="" id="screen" disabled>
         <div class="keys">
             <div class="keyboard" id="nums">
-                <button name="number" data-value="1">1</button>
-                <button name="number" data-value="2">2</button>
-                <button name="number" data-value="3">3</button>
-                <button name="number" data-value="4">4</button>
-                <button name="number" data-value="5">5</button>
-                <button name="number" data-value="6">6</button>
                 <button name="number" data-value="7">7</button>
                 <button name="number" data-value="8">8</button>
                 <button name="number" data-value="9">9</button>
+                <button name="number" data-value="4">4</button>
+                <button name="number" data-value="5">5</button>
+                <button name="number" data-value="6">6</button>
+                <button name="number" data-value="1">1</button>
+                <button name="number" data-value="2">2</button>
+                <button name="number" data-value="3">3</button>
             </div>
             <div class="keyboard math" id="ops">
                 <button name="operator" data-value="Sum">+</button>
@@ -103,7 +103,7 @@
             },
 
             _clearScrn(evt) {
-                this.numberA = 0; this.numberB = 0;
+                this.numberA = 0; this.numberB = 0; this.screen.value = 0;
             },
 
             _addNumber(evt) {
