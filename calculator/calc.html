@@ -96,7 +96,7 @@
             stage: 'A',
             screen: document.querySelector('#screen'),
             operation: '',
-            
+
             init() {
                 this._handleEvents();
                 this.screen.value = 0;
@@ -113,7 +113,7 @@
 
             _addNumber(evt) {
                 if (evt.target.name === 'number') {
-                    
+
                     let value = evt.target.dataset.value;
 
                     if (this[`number${this.stage}`] === 0) {
@@ -142,7 +142,7 @@
                 this.screen.value = +this.numberA + +this.numberB;
             }
         }
-
+// smth new
         calc.init();
     </script>
 </body>
