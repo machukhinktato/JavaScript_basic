@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #calc {
+            background: rgb(50, 87, 102);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 400px;
+        }
+
+        .keys {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 100%;
+        }
+
+        .keyboard {
+            width: 180px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .keyboard button {
+            width: 50px;
+            height: 50px;
+            font-weight: bold;
+        }
+
+        .keyboard.math {
+            flex-direction: column;
+            width: 50px
+        }
+
+        button {
+            margin: 5px 0;
+        }
+
+        input {
+            margin-top: 50px;
+            width: 90%;
+            height: 60px;
+            font-size: 2em;
+            color: red
+        }
+    </style>
+</head>
+<body>
+    <div id="calc">
+        <input type="text" name="" id="screen" disabled>
+        <div class="keys">
+            <div class="keyboard" id="nums">
+                <button name="number" data-value="1">1</button>
+                <button name="number" data-value="2">2</button>
+                <button name="number" data-value="3">3</button>
+                <button name="number" data-value="4">4</button>
+                <button name="number" data-value="5">5</button>
+                <button name="number" data-value="6">6</button>
+            </div>
+            <div class="keyboard math" id="ops">
+                <button name="operator" data-value="Sum">+</button>
+                <button name="operator" data-value="Min">-</button>
+                <button name="operator" data-value="Mul">*</button>
+                <button name="operator" data-value="Del">/</button>
+                <button name="result">=</button>
+
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const numbersKeys = document.querySelector('#nums');
+        const operatorsKeys = document.querySelector('#ops');
+
+        const calc = {
+            numberA: 0,
+            numberB: 0,
+            stage: 'A',
+            screen: document.querySelector('#screen'),
+            operation: '',
+            
+            init() {
+                this._handleEvents();
+            },
+            _handleEvents() {
+                numbersKeys.addEventListener('click', this._addNumber.bind(this));
+                operatorsKeys.addEventListener('click', this._opHandler.bind(this));
+            },
+
+            _addNumber(evt) {
+                if (evt.target.name === 'number') {
+                    
+                    let value = evt.target.dataset.value;
+
+                    if (this[`number${this.stage}`] === 0) {
+                        this[`number${this.stage}`] = +value;
+                    } else {
+                        this[`number${this.stage}`] += value;
+                    }
+                    this.screen.value = this[`number${this.stage}`];
+                }
+            },
+            _opHandler(evt) {
+                if (evt.target.name === 'operator') {
+                    this.stage = 'B';
+                    this.screen.value = '';
+                    this.operation = evt.target.dataset.value; 'Sum';
+                }
+
+                if (evt.target.name === 'result') {
+                    this[`_make${this.operation}`]();
+                    this.numberA = this.screen.value;
+                    this.numberB = 0;
+                    this.stage = 'A';
+                }
+            },
+            _makeSum() {
+                this.screen.value = +this.numberA + +this.numberB;
+            }
+        }
+
+        calc.init();
+    </script>
+</body>
+</html>
