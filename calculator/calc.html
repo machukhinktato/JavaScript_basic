@@ -15,6 +15,11 @@
             margin-left: 35%;
         }
 
+        .cleaning {
+            display: flex;
+            justify-content: flex-end;
+        }
+
         .keys {
             display: flex;
             justify-content: space-around;
@@ -59,91 +64,100 @@
     </style>
 </head>
 <body>
-    <div id="calc">
+<div id="calc">
+    <div>
         <input type="text" name="" id="screen" disabled>
-        <div class="keys">
-            <div class="keyboard" id="nums">
-                <button name="number" data-value="7">7</button>
-                <button name="number" data-value="8">8</button>
-                <button name="number" data-value="9">9</button>
-                <button name="number" data-value="4">4</button>
-                <button name="number" data-value="5">5</button>
-                <button name="number" data-value="6">6</button>
-                <button name="number" data-value="1">1</button>
-                <button name="number" data-value="2">2</button>
-                <button name="number" data-value="3">3</button>
-            </div>
-            <div class="keyboard math" id="ops">
-                <button name="operator" data-value="Sum">+</button>
-                <button name="operator" data-value="Min">-</button>
-                <button name="operator" data-value="Mul">*</button>
-                <button name="operator" data-value="Del">/</button>
-                <button name="result">=</button>
-                <button id="clear">C</button>
-
-            </div>
-        </div>
     </div>
 
-    <script>
-        const numbersKeys = document.querySelector('#nums');
-        const operatorsKeys = document.querySelector('#ops');
-        const clearKey = document.querySelector('#clear')
+    <div class="keys">
+        <div class="keyboard cleaning">
+            <button id="clear">C</button>
+        </div>
+        <div class="keyboard" id="nums">
+            <button name="number" data-value="7">7</button>
+            <button name="number" data-value="8">8</button>
+            <button name="number" data-value="9">9</button>
+            <button name="number" data-value="4">4</button>
+            <button name="number" data-value="5">5</button>
+            <button name="number" data-value="6">6</button>
+            <button name="number" data-value="1">1</button>
+            <button name="number" data-value="2">2</button>
+            <button name="number" data-value="3">3</button>
+        </div>
+        <div class="keyboard math" id="ops">
+            <button name="operator" data-value="Sum">+</button>
+            <button name="operator" data-value="Min">-</button>
+            <button name="operator" data-value="Mul">*</button>
+            <button name="operator" data-value="Del">/</button>
+            <button name="result">=</button>
 
-        const calc = {
-            numberA: 0,
-            numberB: 0,
-            stage: 'A',
-            screen: document.querySelector('#screen'),
-            operation: '',
 
-            init() {
-                this._handleEvents();
-                this.screen.value = 0;
-            },
-            _handleEvents() {
-                numbersKeys.addEventListener('click', this._addNumber.bind(this));
-                operatorsKeys.addEventListener('click', this._opHandler.bind(this));
-                clearKey.addEventListener('click', this._clearScrn.bind(this));
-            },
+        </div>
+    </div>
+</div>
 
-            _clearScrn(evt) {
-                this.numberA = 0; this.numberB = 0; this.screen.value = 0;
-            },
+<script>
+    const numbersKeys = document.querySelector('#nums');
+    const operatorsKeys = document.querySelector('#ops');
+    const clearKey = document.querySelector('#clear')
 
-            _addNumber(evt) {
-                if (evt.target.name === 'number') {
+    const calc = {
+        numberA: 0,
+        numberB: 0,
+        stage: 'A',
+        screen: document.querySelector('#screen'),
+        operation: '',
 
-                    let value = evt.target.dataset.value;
+        init() {
+            this._handleEvents();
+            this.screen.value = 0;
+        },
+        _handleEvents() {
+            numbersKeys.addEventListener('click', this._addNumber.bind(this));
+            operatorsKeys.addEventListener('click', this._opHandler.bind(this));
+            clearKey.addEventListener('click', this._clearScrn.bind(this));
+        },
 
-                    if (this[`number${this.stage}`] === 0) {
-                        this[`number${this.stage}`] = +value;
-                    } else {
-                        this[`number${this.stage}`] += value;
-                    }
-                    this.screen.value = this[`number${this.stage}`];
+        _clearScrn(evt) {
+            this.numberA = 0;
+            this.numberB = 0;
+            this.screen.value = 0;
+        },
+
+        _addNumber(evt) {
+            if (evt.target.name === 'number') {
+
+                let value = evt.target.dataset.value;
+
+                if (this[`number${this.stage}`] === 0) {
+                    this[`number${this.stage}`] = +value;
+                } else {
+                    this[`number${this.stage}`] += value;
                 }
-            },
-            _opHandler(evt) {
-                if (evt.target.name === 'operator') {
-                    this.stage = 'B';
-                    this.screen.value = '';
-                    this.operation = evt.target.dataset.value; 'Sum';
-                }
-
-                if (evt.target.name === 'result') {
-                    this[`_make${this.operation}`]();
-                    this.numberA = this.screen.value;
-                    this.numberB = 0;
-                    this.stage = 'A';
-                }
-            },
-            _makeSum() {
-                this.screen.value = +this.numberA + +this.numberB;
+                this.screen.value = this[`number${this.stage}`];
             }
+        },
+        _opHandler(evt) {
+            if (evt.target.name === 'operator') {
+                this.stage = 'B';
+                this.screen.value = '';
+                this.operation = evt.target.dataset.value;
+                'Sum';
+            }
+
+            if (evt.target.name === 'result') {
+                this[`_make${this.operation}`]();
+                this.numberA = this.screen.value;
+                this.numberB = 0;
+                this.stage = 'A';
+            }
+        },
+        _makeSum() {
+            this.screen.value = +this.numberA + +this.numberB;
         }
-// smth new
-        calc.init();
-    </script>
+    }
+    // smth new
+    calc.init();
+</script>
 </body>
 </html>
